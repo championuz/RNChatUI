@@ -23,11 +23,15 @@ import {
 
 
 const AuthScreen = ({navigation}) => {
+const [name, setName] = useState('');
+const [email, setEmail] = useState('');
+const [password, setPassword] = useState('');
 const [signin, setSignin] = useState(false);
  const [data, setData] = React.useState({
         secureTextEntry: true,
 
     });
+
 
     const signInSwitch = () => {
         setSignin(!signin)
@@ -59,6 +63,8 @@ const [signin, setSignin] = useState(false);
                         placeholder="Your Full Name"
                         style={styles.textInput}
                         autoCapitalize="none"
+                        value={name}
+                        onChangeText={setName}
                     />
                 </View>
                 <Text style={[styles.text_footer, {
@@ -69,6 +75,8 @@ const [signin, setSignin] = useState(false);
                         placeholder="Your Email"
                         style={styles.textInput}
                         autoCapitalize="none"
+                        value={email}
+                        onChangeText={setEmail}
                     />
                 </View>
                 <Text style={[styles.text_footer, {
@@ -80,6 +88,8 @@ const [signin, setSignin] = useState(false);
                       secureTextEntry={data.secureTextEntry ? true : false}
                       style={styles.textInput}
                       autoCapitalize="none"
+                      value={password}
+                      onChangeText={setPassword}
                   />
                   <TouchableOpacity
                       onPress={updateSecureText}
@@ -94,7 +104,7 @@ const [signin, setSignin] = useState(false);
 
                
                     <TouchableOpacity
-                        onPress={()=>navigation.navigate('Messages')}
+                        onPress={()=>userRegistration()}
                         style={[styles.signIn, {
                             borderColor: '#009387',
                             borderWidth: 1,
@@ -153,7 +163,7 @@ const [signin, setSignin] = useState(false);
 
                
                     <TouchableOpacity
-                        onPress={()=>navigation.navigate('Messages')}
+                        onPress={()=>userSignin()}
                         style={[styles.signIn, {
                             borderColor: '#009387',
                             borderWidth: 1,

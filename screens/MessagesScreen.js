@@ -20,43 +20,43 @@
  const messages = [
   {
     id: '1',
-    userName: 'Jenny Doe',
+    name: 'John Doe',
     userImg: 'https://placeimg.com/140/140/any',
     messageTime: '4 mins ago',
     messageText:
-      'Hey there, this is my test for a post of my social app in React Native.',
+      'Using the services Firebase provide, a chat functionality can be built into your application.',
   },
   {
     id: '2',
-    userName: 'John Doe',
+    name: 'Sarah Doe',
     userImg: 'https://placeimg.com/140/140/any',
     messageTime: '2 hours ago',
     messageText:
-      'Hey there, this is my test for a post of my social app in React Native.',
+      'Using the services Firebase provide, a chat functionality can be built into your application.',
   },
   {
     id: '3',
-    userName: 'Ken William',
+    name: 'Josh Doe',
     userImg: 'https://placeimg.com/140/140/any',
     messageTime: '1 hours ago',
     messageText:
-      'Hey there, this is my test for a post of my social app in React Native.',
+      'Using the services Firebase provide, a chat functionality can be built into your application.',
   },
   {
     id: '4',
-    userName: 'Selina Paul',
+    name: 'Abigail Doe',
     userImg: 'https://placeimg.com/140/140/any',
     messageTime: '1 day ago',
     messageText:
-      'Hey there, this is my test for a post of my social app in React Native.',
+      'Using the services Firebase provide, a chat functionality can be built into your application.',
   },
   {
     id: '5',
-    userName: 'Christy Alex',
+    name: 'Christy Doe',
     userImg: 'https://placeimg.com/140/140/any',
     messageTime: '2 days ago',
     messageText:
-      'Hey there, this is my test for a post of my social app in React Native.',
+      'Using the services Firebase provide, a chat functionality can be built into your application.',
   },
 ];
  
@@ -69,13 +69,12 @@
                  keyExtractor={(item)=>item.id}
                  renderItem={({item}) => (
                      <TouchableOpacity
-                     onPress={() => navigation.navigate('Chats', {userName: item.userName})}
+                     onPress={() => navigation.navigate('Chats', {name: item.name})}
                      >
                      <View style={styles.card} >
                          <Image style={styles.userImageST} source={{uri: 'https://placeimg.com/140/140/any'}} />
                          <View style={styles.textArea}>
-                         <Text style={styles.nameText} >{item.userName}</Text>
-                         <Text style={styles.msgTime}>{item.messageTime}</Text>
+                         <Text style={styles.nameText} >{item.name}</Text>
                          <Text style={styles.msgContent} >{item.messageText}</Text>
                         </View>
                      </View>

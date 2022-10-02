@@ -26,16 +26,23 @@
             fontWeight: 'bold',
           },
         }}>
-        <Stack.Screen name="Auth" component={AuthScreen} options={() => ({
-          headerBackVisible: false,
-          headerShown: false,
-        })}/>
-        <Stack.Screen name="Messages" component={MessagesScreen} options={() => ({
+        {user ?
+        <>
+       <Stack.Screen name="Messages" component={MessagesScreen} options={() => ({
           headerBackVisible: false,
         })}/>
         <Stack.Screen name="Chats" component={ChatScreen} options={({route}) => ({
-          title: route.params.userName,
-          headerBackTitleVisible: false})}/>
+          title: route.params.name,
+          headerBackTitleVisible: false})}/> 
+          </>
+          :
+          
+          <Stack.Screen name="Auth" component={AuthScreen} options={() => ({
+          headerBackVisible: false,
+          headerShown: false,
+        })}/>
+        }
+        
       </Stack.Navigator>
 </NavigationContainer>
  )};
