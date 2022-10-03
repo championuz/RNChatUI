@@ -28,12 +28,16 @@
         }}>
         {user ?
         <>
-       <Stack.Screen name="Messages" component={MessagesScreen} options={() => ({
+       <Stack.Screen name="Messages" options={() => ({
           headerBackVisible: false,
-        })}/>
-        <Stack.Screen name="Chats" component={ChatScreen} options={({route}) => ({
+        })}>
+         {props => <MessagesScreen {...props} user={user}/>}
+        </Stack.Screen>
+        <Stack.Screen name="Chats" options={({route}) => ({
           title: route.params.name,
-          headerBackTitleVisible: false})}/> 
+          headerBackTitleVisible: false})}>
+           {props => <ChatScreen {...props} user={user}/>}
+        </Stack.Screen> 
           </>
           :
           
